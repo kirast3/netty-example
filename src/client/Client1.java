@@ -9,7 +9,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Client {
+public class Client1 {
     public static void main(String[] args) throws Exception{
         new Client("localhost", 8080).run();
     }
@@ -17,7 +17,7 @@ public class Client {
     private final String host;
     private final int port;
 
-    public Client(String host, int port){
+    public Client1(String host, int port){
         this.host = host;
         this.port = port;
     }

@@ -21,24 +21,18 @@
     <name>netty-example</name>
     <description>netty-example</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.73.Final</version>
+            <version>4.0.0.CR3</version>
         </dependency>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-transport</artifactId>
-            <version>4.0.0.CR2</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.agdturner</groupId>
-            <artifactId>agdt-java-io</artifactId>
-            <version>0.1</version>
-            <scope>compile</scope>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.12.0.GA</version>
         </dependency>
     </dependencies>
 

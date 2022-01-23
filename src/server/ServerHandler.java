@@ -32,12 +32,18 @@ public class ServerHandler extends ChannelInboundMessageHandlerAdapter<String> {
     @Override
     public void messageReceived(ChannelHandlerContext channelHandlerContext, String s) throws Exception {
         Channel incoming = channelHandlerContext.channel();
+        System.out.println("[Echoing]- "+incoming.remoteAddress()+" wrote: " + s);
         for (Channel channel : channels) {
-            if (channel != incoming){
-                channel.write("[" + incoming.remoteAddress() + "]" + s + "\n");
+            if (s.equals("stop")){
+                channels.remove(channelHandlerContext.channel());
+            }
+
+            if (channel == incoming) {
+                channel.write("[YOU]: " + s + "\n");
+            } else {
+                channel.write("[" + incoming.remoteAddress() + "]: " + s + "\n");
             }
         }
-
     }
 
 }
