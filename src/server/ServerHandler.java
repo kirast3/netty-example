@@ -35,7 +35,7 @@ public class ServerHandler extends ChannelInboundMessageHandlerAdapter<String> {
         System.out.println("[Echoing]- "+incoming.remoteAddress()+" wrote: " + s);
         for (Channel channel : channels) {
             if (s.equals("stop")){
-                channels.remove(channelHandlerContext.channel());
+                incoming.close();
             }
 
             if (channel == incoming) {
